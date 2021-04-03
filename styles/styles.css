@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
+::-webkit-scrollbar {
+    background-color: white;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 221, 28);
+    border-radius: 10px 0 0 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
+    color: #222;
     font-family: Arial, Helvetica, sans-serif;
 }
 body {
@@ -16,7 +24,10 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: linear-gradient(to bottom right, red, yellow);
+    background-color: rgb(255, 255, 255);
+    background-image: url("./../resources/images/background.jpg");
+    background-size: cover;
+    background-blend-mode:multiply;
 }
 
 header {
@@ -41,6 +52,12 @@ h1 {
     font-size: 7vw;
     font-family: monospace;
 }
+label {
+    margin-top: 3vw;
+    font-size: 4vw;
+    text-align: center;
+    font-weight: 400;
+}
 
 nav {
     width: 100%;
@@ -52,7 +69,9 @@ nav {
     margin-bottom: 6vw;
 }
 .link-container {
-    border: 2px solid white;
+    border: 2px solid #222;
+    backdrop-filter: blur(0px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
     border-radius: 10px;
     background: transparent;
     width: 100%;
@@ -62,6 +81,8 @@ nav {
 .link-container:hover,
 .link-container:focus {
     background: rgba(255, 255, 255, .3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+    backdrop-filter: blur(5px);
 }
 .link-container a, 
 .link-container a:visited {
@@ -70,13 +91,20 @@ nav {
     width: 100%;
     text-align: center;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .link-container a h3 {
-    outline: none;
+    flex: 1;
     padding: .2vw 5vw;
     font-size: 5vw;
     font-weight: 400;
     font-family: "Fredoreka One", cursive;
+}
+.link-container a i {
+    padding: .2vw 0;
+    font-size: 5vw;
 }
 
 footer {
@@ -92,4 +120,44 @@ footer span {
     letter-spacing: 1px;
     font-weight: 300;
     opacity: .7;
+}
+
+@media (min-width: 1000px) {
+    body {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 20px;
+        grid-template-rows: 1fr .2fr;
+    }
+    header {
+        grid-area: 1 / 1 / 2 / 2;
+        margin: 0;
+        padding: 0;
+    }
+    nav {
+        grid-area: 1 / 2 / 2 / 3;
+        margin: 0;
+        padding: 0;
+    }
+    footer {
+        grid-area: 2 / 1 / 2 / 3;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: min(5vw, 50px);
+    }
+    label {
+        font-size: min(3vw, 30px);
+    }
+
+    .link-container a h3,
+    .link-container a i {
+        font-size: min(4vw, 40px);
+    }
+    footer span {
+        font-size: min(3vw, 30px);
+    }
 }
