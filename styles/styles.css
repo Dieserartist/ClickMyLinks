@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to bottom right, red, yellow);
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 20px;
+    margin: 7vw 0;
+}
+.profile-pic {
+    background-image: url("https://scontent-frt3-1.cdninstagram.com/v/t51.2885-19/s320x320/167456449_466738371413277_6120343725081838616_n.jpg?tp=1&_nc_ht=scontent-frt3-1.cdninstagram.com&_nc_ohc=TvF0u5Eld14AX-XvSGm&edm=ABfd0MgAAAAA&ccb=7-4&oh=43976e8e0011ad7c0aa86953a1e5fe61&oe=608B2BD8&_nc_sid=7bff83");
+    background-size: cover;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+}
+h1 {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 7vw;
+    font-family: monospace;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 20px;
+    margin-bottom: 6vw;
+}
+.link-container {
+    border: 2px solid white;
+    border-radius: 10px;
+    background: transparent;
+    width: 100%;
+    transition: .3s ease;
+    margin-bottom: 1em;
+}
+.link-container:hover,
+.link-container:focus {
+    background: rgba(255, 255, 255, .3);
+}
+.link-container a, 
+.link-container a:visited {
+    outline: none;
+    padding: .05vw 5vw;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.link-container a h3 {
+    outline: none;
+    padding: .2vw 5vw;
+    font-size: 5vw;
+    font-weight: 400;
+    font-family: "Fredoreka One", cursive;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 3vw 0;
+}
+footer span {
+    font-size: 3vw;
+    letter-spacing: 1px;
+    font-weight: 300;
+    opacity: .7;
+}
