@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-
 /* GLOBAL STYLES */
 ::-webkit-scrollbar {
     background-color: white;
@@ -9,14 +7,19 @@
     border-radius: 10px 0 0 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .5);
 }
+:root {
+    --font-color: #333;
+    --bg-color: #fff;
+    --font: "Fredoka One", Arial, Helvetica, sans-serif;
+}
 
 /* GENERAL */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #222;
-    font-family: Arial, Helvetica, sans-serif;
+    color: var(--font-color);
+    font-family: var(--font);
 }
 body {
     min-height: 100vh;
@@ -27,10 +30,18 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--bg-color);
     background-image: url("./../resources/images/background.jpg");
     background-size: cover;
     background-blend-mode:multiply;
+}
+@font-face {
+    font-family: 'Fredoka One';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../resources/fonts/fredoka-one-v12-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../resources/fonts/fredoka-one-v12-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* HEADER */
@@ -44,7 +55,7 @@ header {
     margin: 7vw 0;
 }
 .profile-pic {
-    background-image: url("https://scontent-frt3-1.cdninstagram.com/v/t51.2885-19/s320x320/167456449_466738371413277_6120343725081838616_n.jpg?tp=1&_nc_ht=scontent-frt3-1.cdninstagram.com&_nc_ohc=TvF0u5Eld14AX-XvSGm&edm=ABfd0MgAAAAA&ccb=7-4&oh=43976e8e0011ad7c0aa86953a1e5fe61&oe=608B2BD8&_nc_sid=7bff83");
+    background-image: url("../resources/images/profile.jpg");
     background-size: cover;
     width: 25vw;
     height: 25vw;
@@ -74,7 +85,7 @@ nav {
     margin-bottom: 6vw;
 }
 .link-container {
-    border: 2px solid #222;
+    border: 2px solid #333;
     backdrop-filter: blur(0px);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0);
     border-radius: 10px;
@@ -89,7 +100,7 @@ nav {
     box-shadow: 0 0 20px rgba(0, 0, 0, .3);
     backdrop-filter: blur(5px);
 }
-.link-container a, 
+.link-container a,
 .link-container a:visited {
     outline: none;
     padding: .05vw 5vw;
@@ -105,7 +116,10 @@ nav {
     padding: .2vw 5vw;
     font-size: 5vw;
     font-weight: 400;
-    font-family: "Fredoreka One", cursive;
+    font-family: cursive;
+}
+.link-container a h3 b {
+    font-family: inherit;
 }
 .link-container a i {
     padding: .2vw 0;
